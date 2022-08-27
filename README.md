@@ -62,4 +62,5 @@ git push origin products-page
 then there will be pull request for master(main) branch by clicking compare&pull, 
 create pull reques after first push
 this will create another url for the branch, and it will be ready to merge in github
+then go to product page in github , there will links above  merge pull request button, click the details of last link will reddirect new url wher /product-page is available
 
