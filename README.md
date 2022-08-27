@@ -59,4 +59,7 @@ git add .
 git push origin products-page
 ```
 
-then there will be pull request for master(main) branch by clicking compare&pull, this will create another url for the branch, and it will be ready to merge in github
+then there will be pull request for master(main) branch by clicking compare&pull, 
+create pull reques after first push
+this will create another url for the branch, and it will be ready to merge in github
+
