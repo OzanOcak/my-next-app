@@ -60,3 +60,22 @@ git push origin products-page
 ```
 
 then there will be pull request for master(main) branch by clicking compare&pull, this will create another url for the branch, and it will be ready to merge in github
+
+- how to merge
+
+```console
+git checkout main
+git pull origin main
+```
+
+## client-site
+
+the file name is client-site because it fetch api within useEffect in client-site thus it taks time to load
+
+```javascript
+const headers = {
+  "Cache-Control": "no-cache",
+};
+```
+
+we use no-cache cuz http respond will be 304 redirection since images will be cached which is slower than 204
