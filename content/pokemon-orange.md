@@ -1,4 +1,5 @@
 ---
+id: 3
 name: Pokemon orange
 description: The best Pokemon game that contains all 151 Pokemon
 price: 3500

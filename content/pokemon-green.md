@@ -1,4 +1,5 @@
 ---
+id: 2
 name: Pokemon green
 description: The best Pokemon game that contains all 151 Pokemon
 price: 3000

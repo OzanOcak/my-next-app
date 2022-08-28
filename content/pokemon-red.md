@@ -1,4 +1,5 @@
 ---
+id: 4
 name: Pokemon red
 description: The best Pokemon game that contains all 151 Pokemon
 price: 4000
