@@ -72,7 +72,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const { cart, isOpen, openCart, closeCart } = useCart();
+  const { cart, isOpen, openCart, closeCart, total } = useCart();
   const router = useRouter();
 
   const handleClick = () => {
@@ -108,7 +108,7 @@ const Cart = () => {
             </Ul>
             <Total>
               <span>Total</span>
-              <span>$500</span>
+              <span>${total / 100}</span>
             </Total>
             <Button onClick={navigateToCheckout}>Checkout</Button>
           </>
