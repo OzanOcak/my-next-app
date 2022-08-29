@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FiX } from "react-icons/fi";
 import useCart from "../hooks/useCart";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   position: fixed;
@@ -72,9 +73,15 @@ const Button = styled.button`
 
 const Cart = () => {
   const { cart, isOpen, openCart, closeCart } = useCart();
+  const router = useRouter();
 
   const handleClick = () => {
     closeCart();
+  };
+
+  const navigateToCheckout = () => {
+    closeCart();
+    router.push("/checkout");
   };
 
   return (
@@ -84,24 +91,30 @@ const Cart = () => {
       </XContainer>
       <Content>
         <Title>Cart</Title>
-        <Ul>
-          {cart.map((item) => {
-            console.log("item", item);
-            return (
-              <Item key={item.id}>
-                <span>
-                  {item.qty}x {item.name}
-                </span>
-                <span>${item.price / 100}</span>
-              </Item>
-            );
-          })}
-        </Ul>
-        <Total>
-          <span>Total</span>
-          <span>$500</span>
-        </Total>
-        <Button>Checkout</Button>
+        {cart.length > 0 ? (
+          <>
+            <Ul>
+              {cart.map((item) => {
+                console.log("item", item);
+                return (
+                  <Item key={item.id}>
+                    <span>
+                      {item.qty}x {item.name}
+                    </span>
+                    <span>${item.price / 100}</span>
+                  </Item>
+                );
+              })}
+            </Ul>
+            <Total>
+              <span>Total</span>
+              <span>$500</span>
+            </Total>
+            <Button onClick={navigateToCheckout}>Checkout</Button>
+          </>
+        ) : (
+          <p>Cart is empty</p>
+        )}
       </Content>
     </Container>
   );
